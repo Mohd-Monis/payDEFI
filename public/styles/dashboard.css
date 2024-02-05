@@ -102,13 +102,12 @@ header img {
   background-color: #3e75ff !important;
 }
 
-.qrButtons{
+.qrButtons {
   display: flex;
   justify-content: space-between;
-
 }
 
-.Button{
+.Button {
   background-color: #707070;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -117,7 +116,7 @@ header img {
   color: white;
 }
 
-.receive{
+.receive {
   background-color: #707070;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -127,7 +126,7 @@ header img {
   width: 100%;
 }
 
-.receiveButton{
+.receiveButton {
   margin: 2rem 0;
   width: 100%;
 }
@@ -141,10 +140,9 @@ header img {
   filter: invert(1);
 }
 .transactbutton {
-  margin-top: 50px;
-  bottom: 5px;
+  margin-top: 8px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .send {
   width: 100%;
@@ -188,4 +186,105 @@ header img {
 }
 h4 {
   padding: 5px;
+}
+.qr {
+  width: 48%;
+  margin: 4px;
+  height: 45px;
+  border-radius: 8px;
+  border: 2px solid rgb(79, 123, 255);
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  background-color: #3e75ff;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.qr:hover {
+  background-color: #2362ff;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.qr:active {
+  transform: scale(0.95);
+}
+.e1img2dj {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  word-break: break-word;
+  visibility: inherit;
+  --colors-bg-primary: #fff;
+  --colors-bg-secondary: #f6f6f8;
+  --colors-bg-tertiary: #fafbfc;
+  --colors-bg-special: #fafafc;
+  --colors-bg-activePrimary: #eff3ff;
+  --colors-bg-activeSecondary: #fff;
+  --colors-bg-buttonPrimary: #5887ff;
+  --colors-bg-buttonSecondary: #f6f6f8;
+  --colors-bg-buttonDisabled: #a3a5ba;
+  --colors-bg-app: #fbfbfd;
+  --colors-bg-pressed: #e4eaff;
+  --colors-stroke-primary: #d3d4de;
+  --colors-stroke-secondary: #f2f2f7;
+  --colors-stroke-tertiary: #f6f6f8;
+  --colors-system-errorMain: #f43d3d;
+  --colors-system-successMain: #2db533;
+  --colors-system-warningMain: #ffa631;
+  --colors-system-errorBg: #fef5f5;
+  --colors-system-successBg: #f5fbf5;
+  --colors-system-warningBg: #fffbf5;
+  --colors-textIcon-primary: #202020;
+  --colors-textIcon-secondary: #8e8e93;
+  --colors-textIcon-tertiary: #d2d4e5;
+  --colors-textIcon-links: #82a5ff;
+  --colors-textIcon-active: #5887ff;
+  --colors-textIcon-buttonPrimary: #fff;
+  --colors-textIcon-buttonSecondary: #8e8e93;
+  --colors-textIcon-buttonDisabled: #d0d3e9;
+  --colors-card: #f6f6f9;
+  -webkit-font-smoothing: antialiased;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-box-align: center;
+  align-items: center;
+  color: var(--colors-textIcon-secondary);
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  height: 48px;
+  -webkit-box-pack: center;
+  display: flex;
+  justify-content: center;
+  line-height: 140%;
+}
+.s4e8lvl {
+  color: var(--colors-textIcon-secondary);
+  height: 24px;
+  margin-right: 8px;
+  width: 24px;
+}
+.outlink {
+  margin: 5px;
+}
+.solana {
+  margin-top: 15px;
+}
+.QR {
+  display: flex;
+}
+.QR img {
+  margin: 7px;
+}
+.disclaimer {
+  width: 250px;
+  align-items: center;
+  margin: auto;
 }
