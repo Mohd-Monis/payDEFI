@@ -101,39 +101,6 @@ header img {
   box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
   background-color: #3e75ff !important;
 }
-<<<<<<< HEAD
-
-.qrButtons{
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.Button{
-  background-color: #707070;
-  margin: 0.2rem;
-  padding: 0.2rem;
-  border-radius: 3px;
-  text-decoration: none;
-  color: white;
-}
-
-.receive{
-  background-color: #707070;
-  margin: 0.2rem;
-  padding: 0.2rem;
-  border-radius: 3px;
-  text-decoration: none !important;
-  color: white !important;
-  width: 100%;
-}
-
-.receiveButton{
-  margin: 2rem 0;
-  width: 100%;
-}
-
-=======
 .insideheading {
   display: flex;
   justify-content: space-around;
@@ -191,4 +158,3 @@ header img {
 h4 {
   padding: 5px;
 }
->>>>>>> ccb0a33e5da3eac7574ad8e83067339c30591c3b
