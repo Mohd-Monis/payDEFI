@@ -10,7 +10,6 @@
     <header>
       <img src="../public/images/image-removebg-preview.png" alt="" />
     </header>
-    <body>
             <div class="Container">
                 <div class="leftContainer">
                     <div class="buttons">
@@ -33,32 +32,37 @@
                                 </svg>Dashboard
                             </button>
                         </div>
-                        <div class="button">
-                            <button class="active">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 5L12 15M12 5C11.2998 5 9.99153 6.9943 9.5 7.5M12 5C12.7002 5 14.0085 6.9943 14.5 7.5"
-                                        stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>Send
-                            </button>
-                        </div>
-                        <div class="button">
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 15L12 5M12 15C11.2998 15 9.99153 13.0057 9.5 12.5M12 15C12.7002 15 14.0085 13.0057 14.5 12.5"
-                                        stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>Receive
-                            </button>
-                        </div>
+                        <form action="/send" method="get">
+                            <div class="button">
+                                <button >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M12 5L12 15M12 5C11.2998 5 9.99153 6.9943 9.5 7.5M12 5C12.7002 5 14.0085 6.9943 14.5 7.5"
+                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>Send
+                                </button>
+                            </div>
+                        </form>
+                        <form action="/receive" method="get">
+                            <div class="button">
+                                <button class="active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M12 15L12 5M12 15C11.2998 15 9.99153 13.0057 9.5 12.5M12 15C12.7002 15 14.0085 13.0057 14.5 12.5"
+                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>Receive
+                                </button>
+                            </div>
+                        </form>
+
                         <div class="button">
                             <button>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -93,157 +97,34 @@
                     <div class="page"></div>
                 </div>
                 <div class="rightContainer ">
-                    <div class="insideheading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 5L12 15M12 5C11.2998 5 9.99153 6.9943 9.5 7.5M12 5C12.7002 5 14.0085 6.9943 14.5 7.5"
-                                        stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>Send</div>
-                    <div class="small">
-
-                        <h4>Balance</h4>
-                        <span>
-                            <input type="text" name="recepientAddress" id="quantity">
-                        </span>
+                  <div class="insideheading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M12 15L12 5M12 15C11.2998 15 9.99153 13.0057 9.5 12.5M12 15C12.7002 15 14.0085 13.0057 14.5 12.5"
+                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>Receive
+                  </div>
+                    <div class="QR small" id = "imgBox">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<%=address%>" alt="qr" id="qrImage" >
+                        <p class="disclaimer">Scan this QR code to send funds to this account.</p>
                     </div>
-                    <div class="small">
-                        <h4>To</h4>
-                        <span>
-                            <input type="text" name="recepientAddress" id="rrr">
-                        </span>
-                    </div>
-                    <!-- <div class="transaction">
-                        <p>Recived Amount <span>  
-                                <%=recievedAmount%>
-                            </span>
-                        </p>
-                        <br>
-                        <p>Transaction Cost <span>
-                                <%=transactionCost%>
-                            </span>
-                        </p>
-                        <br>
-                        <p>Total Amount <span>
-                                <%=recievedAmount + transactionCost%>
-                            </span>
-                        </p>
-                        <br>
-                    </div> -->
                     <div class="transactbutton">
-                    <button class="send" onclick="sendButtonClick()">Send</button>
-                    <button class="send" onclick="connectWallet()" id="connect_button">Connect</button>
-                    <p id="status_p"><span id="status"></span></p>
+                        <button href="/copyAddress" class="qr">Copy address</button>
+                        <button href="/copyCode" class="qr">Copy QR code</button>
                     </div>
+                    <div class="solana">
+                    <a href="https://explorer.solana.com/address/3krjFssu9wu5pwx8xPfc18YAz7Bnf41vtVLWDSvoJjy2" target="_blank" rel="noopener noreferrer noindex" class="e1img2dj"><svg class ="outlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0988 3.00012C7.4498 3.00669 5.53898 3.09629 4.31783 4.31764C3 5.63568 3 7.75704 3 11.9997C3 16.2424 3 18.3638 4.31783 19.6818C5.63565 20.9999 7.75668 20.9999 11.9987 20.9999C16.2407 20.9999 18.3617 20.9999 19.6796 19.6818C20.9007 18.4605 20.9903 16.5493 20.9969 12.8998" stroke="#88888d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.5561 3.49637L11.0488 13.0589M20.5561 3.49637C20.0622 3.00175 16.7345 3.04785 16.031 3.05786M20.5561 3.49637C21.0501 3.99098 21.0041 7.32297 20.9941 8.02738" stroke="#88888d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>View in Solana explorer</a>
+</div>
+                    </form>
 
                 </div>
             </div>
-            <script>
-                var wallet;
-                var receiver_address = document.getElementById("rrr").value;
-                const lamports_per_sol = solanaWeb3.LAMPORTS_PER_SOL;
-                function connectWallet() {
-                    (async () => {
-                        try {
-                            wallet = await window.solana.connect();
-                        } catch (err) {
-                            console.log(err);
-                        }
-                    })();
-                    window.solana.on(
-                        "connect",
-                        () => (
-
-                            document.getElementById("connect_button").innerText = "Connected"
-                            // console.log(wallet.publicKey["Symbol(Symbol.toStringTag)"])
-                        )
-                    );
-                }
-
-                async function sendButtonClick() {
-
-                    const receiverAddress = document.getElementById("rrr").value;
-
-                    const quantity = document.getElementById("quantity").value
-                    if (quantity != null && quantity != 0) {
-                        document.getElementById("status_p").text = "Status";
-                        document.getElementById("status_p").innerText = "Sending " + quantity + " SOL to " + ellipsizeAddress(receiverAddress) + " account address";
-                        await signInTransactionAndSendMoney(receiverAddress, quantity)
-                    } else {
-                        document.getElementById("status_p").text = "Status";
-                        document.getElementById("status_p").innerText = "Amount must be more than 0!"
-                    }
-
-                }
-
-                function ellipsizeAddress(str) {
-                    if (str.length > 35) {
-                        return str.substr(0, 8) + '...' + str.substr(str.length - 8, str.length);
-                    }
-                    return str;
-                }
-
-                function signInTransactionAndSendMoney(destPubkeyStr, quantity) {
-                    (async () => {
-                        const network = "https://api.devnet.solana.com";
-                        const connection = new solanaWeb3.Connection(network);
-                        const transaction = new solanaWeb3.Transaction();
-
-                        try {
-                            const lamports = quantity * lamports_per_sol;
-
-                            console.log("starting sendMoney");
-                            const destPubkey = new solanaWeb3.PublicKey(destPubkeyStr);
-                            const walletAccountInfo = await connection.getAccountInfo(
-                                wallet.publicKey
-                            );
-                            console.log("wallet data size", walletAccountInfo?.data.length);
-
-                            const receiverAccountInfo = await connection.getAccountInfo(
-                                destPubkey
-                            );
-                            console.log("receiver data size", receiverAccountInfo?.data.length);
-
-                            const instruction = solanaWeb3.SystemProgram.transfer({
-                                fromPubkey: wallet.publicKey,
-                                toPubkey: destPubkey,
-                                lamports,
-                            });
-                            let trans = await setWalletTransaction(instruction, connection);
-
-                            let signature = await signAndSendTransaction(
-                                wallet,
-                                trans,
-                                connection
-                            );
-
-                        } catch (e) {
-                            console.warn("Failed", e);
-                        }
-
-                    })();
-
-                    async function setWalletTransaction(instruction, connection) {
-                        const transaction = new solanaWeb3.Transaction();
-                        transaction.add(instruction);
-                        transaction.feePayer = wallet.publicKey;
-                        let hash = await connection.getRecentBlockhash();
-                        console.log("blockhash", hash);
-                        transaction.recentBlockhash = hash.blockhash;
-                        return transaction;
-                    }
-
-                    async function signAndSendTransaction(wallet, transaction, connection) {
-                        // Sign transaction, broadcast, and confirm
-                        const { signature } = await window.solana.signAndSendTransaction(
-                            transaction
-                        );
-                        await connection.confirmTransaction(signature);
-                        return signature;
-                    }
-                }
-            </script>
         </body>
 </html>
