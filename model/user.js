@@ -11,5 +11,8 @@ class User{
     async save() {
         await getDb().collection("Users").insert({name : this.name , phone:  this.phone});
     }
-    
+    async exists(){
+        let user = await getDb().collection("Users").findOne({phone: this.phone});
+        return user && user.length;
+    }
 }
