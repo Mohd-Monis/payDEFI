@@ -3,26 +3,40 @@ body{
     height: 100%;
     padding: none;
     margin: none;
-    background-color: #161616;
+    background-color: #ffffff;
 }
 
 .header{
     padding: 1rem;
     font-size: 2rem !important;
-    width: 100%;
+    width: auto;
     margin: none;
     color: bisque;
 }
 
+.header img{
+    height: 7rem;
+    filter: invert(70%);
+}
 .header ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-    margin: 1rem auto;
+    margin: none;
+    width: auto;
+    height: 3rem;
 
 }
 
+svg{
+    filter: invert(70%);
+   
+}
+
+.icon{
+    margin-right: 1.8rem;
+}
 .header a{
     text-decoration: none;
     color: inherit;
@@ -55,7 +69,17 @@ footer ul{
     align-items: center;
     margin: 1rem auto;
 }
+.right{
+    width: 10rem;
+}
 
+h1{
+    font-size: 1rem;
+}
+.footer{
+    position: relative;
+    bottom: -80px;
+}
 footer a{
     text-decoration: none;
     color: inherit;
