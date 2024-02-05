@@ -94,7 +94,7 @@
                 <div class="rightContainer ">
                     <div class="small">
 
-                        <h4>Balance</h4>
+                        <h4>Amount to pay</h4>
                         <span>
                             <input type="text" name="recepientAddress" id="quantity">
                         </span>
@@ -105,23 +105,7 @@
                             <input type="text" name="recepientAddress" id="rrr">
                         </span>
                     </div>
-                    <!-- <div class="transaction">
-                        <p>Recived Amount <span>
-                                <%=recievedAmount%>
-                            </span>
-                        </p>
-                        <br>
-                        <p>Transaction Cost <span>
-                                <%=transactionCost%>
-                            </span>
-                        </p>
-                        <br>
-                        <p>Total Amount <span>
-                                <%=recievedAmount + transactionCost%>
-                            </span>
-                        </p>
-                        <br>
-                    </div> -->
+                
                     <div class="transactbutton">
                     <button class="send" onclick="sendButtonClick()">Send</button>
                     <button class="send" onclick="connectWallet()" id="connect_button">Connect</button>
@@ -160,7 +144,9 @@
                     if (quantity != null && quantity != 0) {
                         document.getElementById("status_p").text = "Status";
                         document.getElementById("status_p").innerText = "Sending " + quantity + " SOL to " + ellipsizeAddress(receiverAddress) + " account address";
-                        await signInTransactionAndSendMoney(receiverAddress, quantity)
+                        await signInTransactionAndSendMoney(receiverAddress, quantity);
+                        setTimeout(()=>{document.getElementById("status_p").innerText = "Transaction Successfull ✅✅"}, 10000);
+
                     } else {
                         document.getElementById("status_p").text = "Status";
                         document.getElementById("status_p").innerText = "Amount must be more than 0!"
