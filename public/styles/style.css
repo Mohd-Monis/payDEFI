@@ -59,6 +59,11 @@ svg{
 
 #icon{
     color: bisque;
+
+}
+
+#headerIcon{
+    padding: auto;
 }
 
 footer{
@@ -93,3 +98,8 @@ footer a{
     color: inherit;
 }
 
+.footer{
+    box-shadow: 0 0 4rem#9c8a74;
+  }
+  
+  
