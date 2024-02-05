@@ -101,7 +101,6 @@ header img {
   box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
   background-color: #3e75ff !important;
 }
-<<<<<<< HEAD
 
 .qrButtons{
   display: flex;
@@ -133,7 +132,6 @@ header img {
   width: 100%;
 }
 
-=======
 .insideheading {
   display: flex;
   justify-content: space-around;
@@ -191,4 +189,3 @@ header img {
 h4 {
   padding: 5px;
 }
->>>>>>> ccb0a33e5da3eac7574ad8e83067339c30591c3b
