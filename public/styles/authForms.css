@@ -99,6 +99,7 @@ input {
 	width: 768px;
 	max-width: 100%;
 	min-height: 400px;
+	margin-bottom: 3rem;
     color: bisque;
 }
 

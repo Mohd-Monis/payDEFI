@@ -21,6 +21,10 @@ class User{
         console.log(user);
         return user;
     }
+    async saveWebAddress(address){
+        let db = getDb();
+        await db.collection("Map").insertOne({phone: this.phone, address : address})
+    }
 }
 
 module.exports = User

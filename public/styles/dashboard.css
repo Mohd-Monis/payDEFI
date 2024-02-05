@@ -1,0 +1,15 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    padding: 0.2rem;
+    height: auto;
+}
+.rightContainer{
+    background-color: #333333;
+  
+  }
+  
+  .small{
+    background-color: #707070;
+  }
+  

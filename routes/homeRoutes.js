@@ -11,4 +11,13 @@ router.get("/",function(req,res){
     }
 });
 
+router.get("/dashboard", function(req,res){
+    res.render("dashboard",{
+        balance: 1000,
+        recepientAddress: 133541,
+        recievedAmount : 9000,
+        transactionCost:  1
+    });
+})
+
 module.exports = router

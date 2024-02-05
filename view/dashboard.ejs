@@ -1,0 +1,29 @@
+<%-include("includes/head")%>
+<link rel="stylesheet" href="styles/dashboard.css">
+</head>
+
+<%- include("includes/header") %>
+
+<body>
+    <div class="Container">
+        <div class="leftContainer">
+
+        </div>
+        <div class="rightContainer">
+            <div class="small">
+                <h4>Balance</h4>
+                <span><%=balance%></span>
+            </div>
+            <div class="small">
+                <h4>To</h4>
+                <span><%=recepientAddress%></span>
+            </div>
+            <div class="transaction">
+            <p>Recived Amount <%=recievedAmount%></p>
+            <p>Transaction Cost <%=transactionCost%></p>
+            <p>Total Amount <%=recievedAmount + transactionCost%></p>
+            </div>
+            <button class="send">Send</button>
+        </div>
+    </div>
+</body>
