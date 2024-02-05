@@ -22,6 +22,6 @@ router.get("/send", function(req,res){
 
 
 router.get("/receive",function(req,res){
-    res.render("receive",{address: "monis"});
+    res.render("receive",{address: ""});
 })
 module.exports = router
