@@ -7,10 +7,11 @@ const router = express.Router();
 
 router.get("/login",control.getLogin);
 
-router.post("/signup",async function(req,res){
+router.post("/signUp",async function(req,res){
+    console.log("HEYY")
     const user = new User(req.body.name,req.body.phone);
     await user.save();
-    res.redirect("/signup");
+    res.redirect("/");
 })
 router.post("/login",function(req,res){
     const user = new User(req.body.name, req.body.phone);
