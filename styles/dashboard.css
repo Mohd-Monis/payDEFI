@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+body {
+  background-color: #161616;
+  color: #f9f9f9;
+}
+header {
+  height: 50px;
+  border: 2px solid white;
+}
+header img {
+  filter: brightness(0) invert(1);
+  height: 50px;
+}
+.button button {
+  display: flex;
+  justify-content: left;
+  width: 246px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  align-items: center;
+  margin-left: 0;
+}
+.button {
+  margin: 22px;
+}
+.button button svg {
+  height: 24px;
+  margin-right: 8px;
+  filter: invert(1);
+}
+
+.button button {
+  --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+  --accent: #3e75ff;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 1.1em;
+  background-color: #212121;
+  cursor: pointer;
+  color: white;
+  padding: 1em 2em;
+  transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+    letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+  box-shadow: 13px 13px 10px #1c1c1c, -13px -13px 10px #262626;
+}
+
+.button button:hover {
+  box-shadow: var(--hover-shadows);
+}
+
+.button button:active {
+  box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+  background-color: var(--accent);
+  transform: scale(0.95);
+}
+.active {
+  box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+  background-color: #3e75ff !important;
+}
