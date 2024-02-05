@@ -6,16 +6,15 @@ const User = require("../model/user")
 const router = express.Router();
 
 router.get("/login",control.getLogin);
-
 router.post("/signUp",async function(req,res){
-    console.log("HEYY")
     const user = new User(req.body.name,req.body.phone);
     await user.save();
-    res.redirect("/");
+    res.redirect("/login");
 })
-router.post("/login",function(req,res){
+router.post("/login",async function(req,res){
     const user = new User(req.body.name, req.body.phone);
-    if(user.exists()){
+    if(await user.exists()){
+        req.session.isAuth = true;
         res.render("home");
     }
     else{
