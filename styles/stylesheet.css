@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap");
+
+* {
+  font-family: "GT Super Txt Trial", sans-serif;
+}
+body {
+  background-color: #161616;
+  color: #f9f9f9;
+}
+.container {
+  display: flex;
+}
+.border {
+  border: 2px solid red;
+}
+.left {
+  height: 100vh;
+  width: 50vw;
+}
+.left img {
+  height: 65vh;
+  margin: 120px 50px;
+  border-radius: 9px;
+  box-shadow: 0px 0px 6.5rem rgba(18, 102, 172, 0.589);
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  width: 50vw;
+}
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #37ff8b;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  -webkit-filter: drop-shadow(0 0 23px var(--animation-color));
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+.welcome {
+  margin: auto 0;
+
+  text-align: right;
+  padding-right: 30px;
+}
+
+.welcome h1 {
+  font-family: "Unbounded", sans-serif;
+  font-size: 2.4rem;
+}
+
+.welcome h3 {
+  width: 700px;
+  font-size: 1rem;
+  max-width: 100%; /* Ensure the width doesn't exceed the container */
+  margin-left: auto; /* Align to the right by pushing it to the left margin */
+}
