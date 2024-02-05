@@ -102,3 +102,34 @@ header img {
   box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
   background-color: #3e75ff !important;
 }
+
+.qrButtons{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.Button{
+  background-color: #707070;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-radius: 3px;
+  text-decoration: none;
+  color: white;
+}
+
+.receive{
+  background-color: #707070;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-radius: 3px;
+  text-decoration: none !important;
+  color: white !important;
+  width: 100%;
+}
+
+.receiveButton{
+  margin: 2rem 0;
+  width: 100%;
+}
+

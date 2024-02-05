@@ -11,8 +11,8 @@ router.get("/",function(req,res){
     }
 });
 
-router.get("/dashboard", function(req,res){
-    res.render("dashboard",{
+router.get("/send", function(req,res){
+    res.render("send",{
         balance: 1000,
         recepientAddress: 133541,
         recievedAmount : 9000,
@@ -20,4 +20,8 @@ router.get("/dashboard", function(req,res){
     });
 })
 
+
+router.get("/receive",function(req,res){
+    res.render("receive",{address: "monis"});
+})
 module.exports = router
