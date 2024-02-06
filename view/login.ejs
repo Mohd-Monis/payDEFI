@@ -11,37 +11,35 @@
                 <div class="container" id="container">
                     <div class="form-container sign-up-container">
                         <form action="/signUp" method="post">
-                            <h2>Create Account</h2>
-                            <input type="text" placeholder="Name"  name="name"/>
+                            <h1>Create Account</h1>
+                            <input type="text" placeholder="Name" name="name"/>
                             <input type="text" placeholder="Phone Number" name="phone" />
-                            <button >Sign Up</button>
+                            <button>Sign Up</button>
                         </form>
                     </div>
                     <div class="form-container sign-in-container">
                         <form action="/login" method="post">
-                            <h2>Sign in</h2>
+                            <h1>Sign in</h1>
                             <input type="text" placeholder="Name"  name="name"/>
                             <input type="text" placeholder="Phone Number" name="phone" />
-                            <button >Sign In</button>
+                            <button>Sign In</button>
                         </form>
                     </div>
                     <div class="overlay-container">
                         <div class="overlay">
                             <div class="overlay-panel overlay-left">
-                                <h2>Welcome Back!</h2>
+                                <h1>Welcome Back!</h1>
                                 <p>To keep connected with us please login with your personal info</p>
-                                <button class="ghost" id="signIn1">Sign In</button>
+                                <button class="ghost" id="signIn">Sign In</button>
                             </div>
                             <div class="overlay-panel overlay-right">
-                                <h2>Hello, Friend!</h2>
+                                <h1>Hello, Friend!</h1>
                                 <p>Enter your personal details and start journey with us</p>
-                                <button class="ghost" id="signUp1">Sign Up</button>
+                                <button class="ghost" id="signUp">Sign Up</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
             </main>
 
             <%- include("includes/footer.ejs") %>
