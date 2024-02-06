@@ -3,7 +3,7 @@ body{
     height: 100%;
     padding: none;
     margin: none;
-    background-color: #ffffff;
+    background-color: #161616;
     margin: 0;
 }
 
@@ -101,7 +101,7 @@ footer a{
 }
 
 .footer{
-    box-shadow:  0 -2rem 2rem rgba(156, 138, 116, 0.4);
+    box-shadow:  0 -1rem 1rem rgba(156, 138, 116, 0.2);
 }
 
 .small span{
