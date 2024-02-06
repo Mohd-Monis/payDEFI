@@ -30,6 +30,11 @@ app.set("views","view");
 
 
 app.use(authRoutes);
+
+app.use(function(req,res,next){
+  res.locals.isAuth = req.session.isAuth;
+  next();
+})
 app.use(homeRoutes)
 
 app.listen(3000);

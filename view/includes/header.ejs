@@ -4,8 +4,10 @@
 <img src="images/icon.png" alt="PayDEFI">
         </li>
 
-     
-
-       
+       <% if(locals.isAuth){%>
+        <li>
+         <a href="/logout" class="logout"> Logout</a>
+        </li>
+        <%}%>
     </ul>
 </header>

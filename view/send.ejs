@@ -1,6 +1,7 @@
 <%-include("includes/head")%>
     <link rel="stylesheet" href="styles/dashboard.css">
-    </head>
+    <title>send</title>
+</head>
 
     <%- include("includes/header") %>
 
@@ -152,8 +153,8 @@
                     window.solana.on(
                         "connect",
                         () => (
-                            // console.log(wallet)
-                            // document.getElementById("connect_button").innerText = "Connected"
+                            console.log(wallet),
+                            document.getElementById("connect_button").innerText = "Connected",
                             console.log(walletAccountInfo)
                         )
                     );

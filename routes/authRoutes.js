@@ -11,13 +11,18 @@ router.post("/signUp",async function(req,res){
     await user.save();
     res.redirect("/login");
 })
+
+router.get("/logout", async function(req,res){
+    req.session.isAuth = false;
+    return res.redirect("/");
+})
 router.post("/login",async function(req,res){
     const user = new User(req.body.name, req.body.phone);
     if(await user.exists()){
         req.session.name = user.name;
         req.session.phone = user.phone
         req.session.isAuth = true;
-        res.render("home");
+        res.redirect("/dashboard");
     }
     else{
         res.redirect("/login")

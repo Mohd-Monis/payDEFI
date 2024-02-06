@@ -250,3 +250,11 @@ footer a {
   color: #3c97bf;
   text-decoration: none;
 }
+
+.container h1{
+	font-size: 2rem;
+}
+
+.form-container h1{
+	color: #333;
+}
