@@ -44,10 +44,10 @@
 body {
   background-color: #161616;
   color: #f9f9f9;
+
 }
 header {
   height: 50px;
-  border: 2px solid white;
 }
 header img {
   filter: brightness(0) invert(1);

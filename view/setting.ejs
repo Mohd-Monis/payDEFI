@@ -1,4 +1,4 @@
-<%-include("includes/head")%>
+<%-include("includes /head")%>
     <link rel="stylesheet" href="styles/dashboard.css">
     </head>
 
@@ -10,7 +10,7 @@
                     <div class="buttons">
                         <div class="button">
                             <form action="/dashboard" method="get">
-                                <button >
+                                <button>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none">
                                         <path
@@ -32,15 +32,15 @@
                         </div>
                         <form action="/send" method="get">
                             <div class="button">
-                                <button class="active">
+                                <button>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none">
                                         <path
                                             d="M12 5L12 15M12 5C11.2998 5 9.99153 6.9943 9.5 7.5M12 5C12.7002 5 14.0085 6.9943 14.5 7.5"
                                             stroke="#000000" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
-                                        <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                        <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>Send
                                 </button>
                             </div>
@@ -54,13 +54,13 @@
                                             d="M12 15L12 5M12 15C11.2998 15 9.99153 13.0057 9.5 12.5M12 15C12.7002 15 14.0085 13.0057 14.5 12.5"
                                             stroke="#000000" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
-                                        <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                        <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>Receive
                                 </button>
                             </div>
                         </form>
-                        
+
                         <div class="button">
                             <button onclick="temp()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -80,7 +80,7 @@
                         </div>
                         <div class="button">
                             <form action="/setting" method="get">
-                                <button>
+                                <button class="active">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none">
                                         <path
@@ -92,160 +92,31 @@
                                     </svg>Settings
                                 </button>
                             </form>
-                            
+
                         </div>
                     </div>
                     <div class="page"></div>
                 </div>
                 <div class="rightContainer ">
-                    <div class="insideheading">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 5L12 15M12 5C11.2998 5 9.99153 6.9943 9.5 7.5M12 5C12.7002 5 14.0085 6.9943 14.5 7.5"
-                                        stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M5 19H19.0001" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>Send
-                    </div>
                     <div class="small">
-                        <h4>Amount to pay</h4>
-                        <span>
-                            <input type="text" name="recepientAddress" id="quantity">
-                        </span>
-                    </div>
-                    <div class="small">
-                        <h4>To</h4>
-                        <span>
-                            <input type="text" name="recepientAddress" id="rrr">
-                        </span>
-                    </div>
-                
-                    <div class="transactbutton">
-                    <button class="send" onclick="sendButtonClick()">Send</button>
-                    <button class="send" onclick="connectWallet()" id="connect_button">Connect</button>
-                    <p id="status_p"><span id="status"></span></p>
-                    </div>
 
+                        <h4>Phone Number: </h4>
+                        <span>
+                            <%=phone%>
+                        </span>
+                    </div>
+                    <div class="small">
+                        <h4>Name</h4>
+                        <span>
+                            <%=name %>
+                        </span>
+                    </div>
                 </div>
             </div>
-            <script>
-                
-                function temp(){
-                    alert('This is testnet so we can\'t provide transaction history');
-                }
-            
-                var wallet;
-                var receiver_address = document.getElementById("rrr").value;
-                
-                const lamports_per_sol = solanaWeb3.LAMPORTS_PER_SOL;
-                function connectWallet() {
-                    (async () => {
-                        try {
-                            wallet = await window.solana.connect();
-
-                        } catch (err) {
-                            console.log(err);
-                        }
-                    })();
-                    window.solana.on(
-                        "connect",
-                        () => (
-                            // console.log(wallet)
-                            // document.getElementById("connect_button").innerText = "Connected"
-                            console.log(walletAccountInfo)
-                        )
-                    );
-                }
-                var senders_address = wallet.publicKey.toBase58();
-                
-                async function sendButtonClick() {
-
-                    const receiverAddress = document.getElementById("rrr").value;
-
-                    const quantity = document.getElementById("quantity").value
-                    if (quantity != null && quantity != 0) {
-                        document.getElementById("status_p").text = "Status";
-                        document.getElementById("status_p").innerText = "Sending " + quantity + " SOL to " + ellipsizeAddress(receiverAddress) + " account address";
-                        await signInTransactionAndSendMoney(receiverAddress, quantity);
-                        setTimeout(()=>{document.getElementById("status_p").innerText = "Transaction Successfull ✅✅"}, 10000);
-
-                    } else {
-                        document.getElementById("status_p").text = "Status";
-                        document.getElementById("status_p").innerText = "Amount must be more than 0!"
+            <%-include("includes /footer") %>
+                <script>
+                    function temp() {
+                        alert('This is testnet so we can\'t provide transaction history');
                     }
-
-                }
-
-                function ellipsizeAddress(str) {
-                    if (str.length > 35) {
-                        return str.substr(0, 8) + '...' + str.substr(str.length - 8, str.length);
-                    }
-                    return str;
-                }
-
-                function signInTransactionAndSendMoney(destPubkeyStr, quantity) {
-                    (async () => {
-                        const network = "https://api.devnet.solana.com";
-                        const connection = new solanaWeb3.Connection(network);
-                        const transaction = new solanaWeb3.Transaction();
-
-                        try {
-                            const lamports = quantity * lamports_per_sol;
-
-                            console.log("starting sendMoney");
-                            const destPubkey = new solanaWeb3.PublicKey(destPubkeyStr);
-                            const walletAccountInfo = await connection.getAccountInfo(
-                                wallet.publicKey
-                            );
-                            console.log("wallet data size", walletAccountInfo?.data.length);
-
-                            const receiverAccountInfo = await connection.getAccountInfo(
-                                destPubkey
-                            );
-                            console.log("receiver data size", receiverAccountInfo?.data.length);
-
-                            const instruction = solanaWeb3.SystemProgram.transfer({
-                                fromPubkey: wallet.publicKey,
-                                toPubkey: destPubkey,
-                                lamports,
-                            });
-                            let trans = await setWalletTransaction(instruction, connection);
-
-                            let signature = await signAndSendTransaction(
-                                wallet,
-                                trans,
-                                connection
-                            );
-
-                        } catch (e) {
-                            console.warn("Failed", e);
-                        }
-
-                    })();
-
-                    async function setWalletTransaction(instruction, connection) {
-                        const transaction = new solanaWeb3.Transaction();
-                        transaction.add(instruction);
-                        transaction.feePayer = wallet.publicKey;
-                        let hash = await connection.getRecentBlockhash();
-                        console.log("blockhash", hash);
-                        transaction.recentBlockhash = hash.blockhash;
-                        return transaction;
-                    }
-
-                    async function signAndSendTransaction(wallet, transaction, connection) {
-                        // Sign transaction, broadcast, and confirm
-                        const { signature } = await window.solana.signAndSendTransaction(
-                            transaction
-                        );
-                        await connection.confirmTransaction(signature);
-                        return signature;
-                    }
-                }
-
-                
-            </script>
-            <%- include("includes/footer") %>
+                </script>
         </body>

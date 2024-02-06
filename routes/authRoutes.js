@@ -14,6 +14,8 @@ router.post("/signUp",async function(req,res){
 router.post("/login",async function(req,res){
     const user = new User(req.body.name, req.body.phone);
     if(await user.exists()){
+        req.session.name = user.name;
+        req.session.phone = user.phone
         req.session.isAuth = true;
         res.render("home");
     }

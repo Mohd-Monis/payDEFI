@@ -12,16 +12,49 @@ router.get("/",function(req,res){
 });
 
 router.get("/send", function(req,res){
-    res.render("send",{
-        balance: 1000,
-        recepientAddress: 133541,
-        recievedAmount : 9000,
-        transactionCost:  1
-    });
+    if(req.session.isAuth){
+        res.render("send");
+    }
+    else{
+        return res.redirect("/login");
+    }
+    
 })
 
 
 router.get("/receive",function(req,res){
-    res.render("receive",{address: ""});
+    if(req.session.isAuth){
+        res.render("receive",{address: "monish"});
+    }
+    else{
+        return res.redirect("/login");
+    }
+    
+})
+
+router.get("/dashboard",function(req,res){
+    if(req.session.isAuth){
+        res.render("dashboard",{
+            solanaCoins: 10,
+            balance: 9000
+        })
+    }
+    else{
+        return res.redirect("/login");
+    }
+    
+})
+
+router.get("/setting",function(req,res){
+    if(req.session.isAuth){
+        res.render("setting",{
+           name : req.session.name,
+           phone: req.session.phone
+        })
+    }
+    else{
+        return res.redirect("/login");
+    }
+    
 })
 module.exports = router

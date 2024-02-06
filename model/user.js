@@ -1,7 +1,6 @@
 const mongodb = require("mongodb")
 const getDb = require("../data/database");
 
-
 class User{
     constructor(name,phone,id){
         this.name = name;
@@ -23,7 +22,7 @@ class User{
     }
     async saveWebAddress(address){
         let db = getDb();
-        await db.collection("Map").insertOne({phone: this.phone, address : address})
+        await db.collection("Users").updateOne({phone: this.phone}, {$set : {address : address}});
     }
 }
 
